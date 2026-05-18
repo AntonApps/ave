@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #111;
+  color: white;
+  width: 220px;
+}
+
+.container {
+  padding: 15px;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+#status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: red;
+}
+
+.switch {
+  display: block;
+  margin: 10px auto;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  width: 40px;
+  height: 20px;
+  background: #444;
+  display: inline-block;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: #00ff88;
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #0080ff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3399ff;
+}
+
+#donate {
+  margin-top: 8px;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371);
+}
+
+#donate:hover {
+  opacity: 0.9;
+}
+
+.version {
+  margin-top: 12px;
+  font-size: 10px;
+  opacity: 0.4;
+  text-align: center;
+}

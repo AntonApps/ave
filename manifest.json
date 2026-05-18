@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Audio Vis Effects (AVE)",
+  "version": "1.0",
+  "description": "Visualizador de audio en tiempo real para el navegador",
+
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "AVE"
+  },
+
+"content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": [
+      "vis/3d/webglEngine.js",
+      "vis/3d/circlePulse.js",
+       "vis/3d/text3D.js",
+       "vis/3d/tunnel3D.js",
+      "content/widget.js"
+    ]
+  }
+],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ave@antonapps.mx"
+    }
+  }
+}
